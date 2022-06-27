@@ -5,12 +5,12 @@
       <b-row>
         <h3 data-aos="fade-up" class="message col-10">Welcome Ibukun! <br> <span class="ibukun">What would you like to send today</span></h3>
          <div>
-          <b-button variant="primary" class="btn__primary2 wallet bg-transparent" data-aos="fade-left"
+          <b-button variant="primary" class="test1 btn__primary2 wallet bg-transparent" data-aos="fade-left"
             >10,000 NGN(wallet)</b-button
           >
         </div>
         <div class="hero-content">
-          <b-button variant="primary" class="btn__primary2" data-aos="fade-left"
+          <b-button variant="primary" class="test btn__primary2" data-aos="fade-left"
             >Track Order</b-button
           >
         </div>
@@ -72,6 +72,11 @@ export default {
     color: $green !important;
   }
 
+  .btn__primary2 {
+    left: 10%;
+    position: relative;
+  }
+
   .btn__primary {
     border: none;
     outline: none;
@@ -92,9 +97,16 @@ export default {
     max-width: 298px;
     height: 40px;
   }
-
+  .test1 {
+    color: $primary;
+  }
+  .test {
+    width: 80%;
+  }
   .hero-content {
-    padding: 48px 0 120px 0;
+    position: relative;
+    right: 6%;
+    padding: 48px 0 20px 0;
     width: 200%;
     max-width: 665px;
     margin: 0 auto;

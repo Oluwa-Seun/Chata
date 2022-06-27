@@ -40,7 +40,8 @@ export default {
 <style lang="scss">
 @import "../../assets/scss/style.scss";
 .navbar1{
-height: 10%;
+height: 6.4%;
+justify-content: center;
 align-items: center;
 }
 </style>

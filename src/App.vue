@@ -1,19 +1,20 @@
 import Bottomnav from '@/components/Navigation/Bottomnav.vue';
 
 <template>
-  <div class="app" v-if="!laptop">
+  <div class="app laptop" :class="{mobile, Hero, hasHeader, showSidebar}">
     <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div> -->
     <router-view/>
   </div>
-  <div v-else class="laptop-message flex flex-column">
-    <h2> sorry this can only be viewed on mobile devices</h2>
-   </div>
+
 </template>
 
 <style lang="scss">
+.mobile .laptop {
+  background-color: #000;
+}
 #app {
   overflow: hidden;
    background-color: black;
@@ -25,26 +26,16 @@ import Bottomnav from '@/components/Navigation/Bottomnav.vue';
 </style>
 
 <script>
-
 export default {
   data() {
     return {
-      laptop: null,
+      mobile: window.innerWidth <= 700,
     };
   },
   created() {
-    this.checkScreen();
-    window.addEventListener('resize', this.checkScreen);
-  },
-  methods: {
-    checkScreen() {
-      const windowWidth = window.innerWindo;
-      if (windowWidth <= 350) {
-        this.laptop = true;
-        return;
-      }
-      this.laptop = false;
-    },
+    window.addEventListener('resize', () => {
+      this.mobile = window.innerWidth <= 700;
+    });
   },
 };
 </script>
